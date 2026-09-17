@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block title %}Book Appointment | Ranimuthu Clinic{% endblock %} {% block content %}
+ONLINE BOOKING
+Book your appointment
+Choose a service, date and time. You will then be taken to the payment-reference page.
+
+Clinic logo
+{{ doctor.name }}{{ doctor.specialty }}
+Service
+{{ s.name }} — ₹{{ s.fee }}
+Date
+dd/mm/yyyy
+Time
+--:--
+Reason for visit
+Briefly describe the reason for your visit
+
+Continue to Payment →
+{% endblock %}
