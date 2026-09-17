@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block title %}Bill {{ bill.bill_number }} | {{ clinic.name }}{% endblock %} {% block content %}
+PAYMENT RECEIPT
+{{ clinic.name }}
+{{ clinic.address }}
+
+{{ clinic.phone }} · {{ clinic.email }}
+
+Clinic logo
+PAID
+Bill Number{{ bill.bill_number }}
+Payment Date{{ bill.paid_at }}
+Patient Details
+{{ bill.patient_name }}
+
+{{ bill.patient_phone }} · {{ bill.patient_email }}
+
+Doctor{{ bill.doctor_name }}
+Service{{ bill.service_name }}
+Appointment{{ bill.appointment_date }} at {{ bill.appointment_time }}
+Payment Method{{ bill.method }}
+Transaction ID{{ bill.transaction_id }}
+Total Paid₹{{ bill.amount }}
+This receipt confirms that the payment reference was recorded in the clinic database. Use Send Bill to Parent WhatsApp to share the bill details from the patient mobile.
+
+Print / Save as PDF Send Bill to Parent WhatsApp Back to Patient Dashboard
+{% endblock %}
