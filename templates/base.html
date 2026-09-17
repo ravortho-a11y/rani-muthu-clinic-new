@@ -1,0 +1,22 @@
+Ranimuthu Clinic logo RANIMUTHU CLINIC{{ clinic.short_doctor }} • {{ clinic.qualifications }} ☰
+Home About Fees Contact {% if session.get('patient_id') %} Patient Dashboard Logout {% elif session.get('doctor_id') %} Doctor Dashboard Database Logout {% else %} Patient Login Doctor Login {% endif %}
+{% with messages=get_flashed_messages(with_categories=true) %} {% if messages %}
+{% for category,message in messages %}
+{{ message }}
+{% endfor %}
+{% endif %} {% endwith %}
+{% block content %}{% endblock %}
+Logo
+Ranimuthu Clinic
+Quality care. Better health.
+
+Quick Links
+AboutFeesContact
+Contact
+{{ clinic.phone }}
+
+{{ clinic.email }}
+
+{{ clinic.hours }}
+
+© 2026 Ranimuthu Clinic. For clinical emergencies, use local emergency services.
