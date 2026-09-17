@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block title %}Database | Rani Muthu Clinic{% endblock %} {% block content %}
+DOCTOR DATABASE
+Clinic Data Center
+Secure view of patients, appointments, payments and bills.
+
+{{ q }}
+Search
+Export PatientsExport AppointmentsExport Payments
+Patients{{ patients|length }}
+Appointments{{ appointments|length }}
+Payments{{ payments|length }}
+Total Paid₹{{ payments|sum(attribute='amount') }}
+Patients
+Registered patient records
+{% for p in patients %}{% else %}{% endfor %}
+ID	Name	Email	Phone	Parent/Guardian	Created
+{{p.id}}	{{p.name}}	{{p.email}}	{{p.phone}}	{{p.parent_phone or '—'}}	{{p.created_at}}
+No patient records.
+Appointments
+Appointment history
+{% for a in appointments %}{% else %}{% endfor %}
+Patient	Service	Date	Time	Status	Payment	Reason
+{{a.patient_name}}	{{a.service_name}}	{{a.appointment_date}}	{{a.appointment_time}}	{{a.status}}	{{a.payment_status}}	{{a.reason or '—'}}
+No appointments.
+Payments & Bills
+Financial records
+{% for p in payments %}{% else %}{% endfor %}
+Patient	Bill	Amount	Method	Transaction ID	Paid At
+{{p.patient_name}}	{{p.bill_number}}	₹{{p.amount}}	{{p.method}}	{{p.transaction_id}}	{{p.paid_at}}
+No payments.
+{% endblock %}
