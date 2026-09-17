@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block title %}Contact | Ranimuthu Clinic{% endblock %} {% block content %}
+GET IN TOUCH
+We are here to help.
+Contact the clinic for appointment and service information.
+
+Contact Details
+☎Phone{{ clinic.phone }}
+✉Email{{ clinic.email }}
+⌖Address{{ clinic.address }}
+◷Opening Hours{{ clinic.hours }}
+Find Us
+Ranimuthu Clinic location QR code
+Scan for Clinic Location
+Scan the QR code with your phone to open Google Maps and get directions.
+
+Open Google Maps →
+DIGITAL PAYMENT
+Pay with Google Pay
+Scan the official clinic UPI QR using Google Pay or another UPI app.
+
+UPI ID: {{ gpay_upi_id }}
+Google Pay UPI QR code
+{% endblock %}
